@@ -56,6 +56,11 @@
 -(int) numOfPageForScrollView:(YKLoopScrollView*) ascrollView;
 
 /*
+ 总共有多少页
+ */
+-(int) widthForScrollView:(YKLoopScrollView*) ascrollView;
+
+/*
  第apageIndex 页的图片网址,  view会被设置为新的frame
  @param viewAtPageIndex:[0- viewAtPageIndex];
  */

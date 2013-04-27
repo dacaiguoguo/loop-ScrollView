@@ -10,7 +10,6 @@
 
 static const int maxRange=1000;    //
 
-#define widthScroll  260
 @interface YKLoopScrollView()
 /*
  设置绝对pageindex [0-2000]; [1000]==0
@@ -39,7 +38,7 @@ static const int maxRange=1000;    //
 }
 -(void) layoutPage:(int) centerIndex{
     sizeOfPage=self.frame.size;
-    sizeOfPage.width = 260;
+    sizeOfPage.width = [self.delegate widthForScrollView:self];
     if(numOfPage>0){
         const int range=2;
         NSMutableDictionary* newdic=[[NSMutableDictionary alloc] init]; //生成新的view
@@ -184,19 +183,19 @@ static const int maxRange=1000;    //
     NSTimeInterval inter = [endDate timeIntervalSinceDate:startDate];
     if (inter<0.2) {
         if (cha<0) {
-            pOff.x = ((int)(oldOffsetX/widthScroll)-1)*widthScroll;
+            pOff.x = ((int)(oldOffsetX/sizeOfPage.width)-1)*sizeOfPage.width;
         }else{
-            pOff.x = ((int)(oldOffsetX/widthScroll)+1)*widthScroll;
+            pOff.x = ((int)(oldOffsetX/sizeOfPage.width)+1)*sizeOfPage.width;
         }
     }else{
         
         if (abs(cha)<160) {
-            pOff.x = ((int)(oldOffsetX/widthScroll))*widthScroll;
+            pOff.x = ((int)(oldOffsetX/sizeOfPage.width))*sizeOfPage.width;
         }else{
             if (cha<0) {
-                pOff.x = ((int)(oldOffsetX/widthScroll)-1)*widthScroll;
+                pOff.x = ((int)(oldOffsetX/sizeOfPage.width)-1)*sizeOfPage.width;
             }else{
-                pOff.x = ((int)(oldOffsetX/widthScroll)+1)*widthScroll;
+                pOff.x = ((int)(oldOffsetX/sizeOfPage.width)+1)*sizeOfPage.width;
             }
             
         }
@@ -218,12 +217,12 @@ static const int maxRange=1000;    //
         float currentX = pOff.x;
         float cha = currentX-oldOffsetX;
         if (abs(cha)<160) {
-            pOff.x = ((int)(oldOffsetX/widthScroll))*widthScroll;
+            pOff.x = ((int)(oldOffsetX/sizeOfPage.width))*sizeOfPage.width;
         }else{
             if (cha<0) {
-                pOff.x = ((int)(oldOffsetX/widthScroll)-1)*widthScroll;
+                pOff.x = ((int)(oldOffsetX/sizeOfPage.width)-1)*sizeOfPage.width;
             }else{
-                pOff.x = ((int)(oldOffsetX/widthScroll)+1)*widthScroll;
+                pOff.x = ((int)(oldOffsetX/sizeOfPage.width)+1)*sizeOfPage.width;
             }
             
         }

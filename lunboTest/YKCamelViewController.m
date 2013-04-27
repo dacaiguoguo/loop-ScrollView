@@ -22,7 +22,9 @@
 -(int) numOfPageForScrollView:(YKLoopScrollView*) ascrollView{
     return self.filenames.count;
 }
-
+-(int) widthForScrollView:(YKLoopScrollView*) ascrollView{
+    return 260;
+}
 /*
  第apageIndex 页的图片网址,  view会被设置为新的frame
  @param viewAtPageIndex:[0- viewAtPageIndex];
