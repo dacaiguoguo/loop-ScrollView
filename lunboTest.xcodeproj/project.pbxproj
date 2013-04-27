@@ -15,7 +15,7 @@
 		590BE026172BC96700EAB1BC /* 2013_3_19_10_30_13_3629.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 590BE020172BC96700EAB1BC /* 2013_3_19_10_30_13_3629.jpg */; };
 		590BE027172BC96700EAB1BC /* 2013_3_25_10_48_58_8644.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 590BE021172BC96700EAB1BC /* 2013_3_25_10_48_58_8644.jpg */; };
 		590BE028172BC96700EAB1BC /* 2013_3_25_14_56_9_9816-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 590BE022172BC96700EAB1BC /* 2013_3_25_14_56_9_9816-1.jpg */; };
-		590BE06A172BE01D00EAB1BC /* YKLoopScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 590BE069172BE01D00EAB1BC /* YKLoopScrollView.m */; };
+		590BE06A172BE01D00EAB1BC /* YKSmallLoopScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 590BE069172BE01D00EAB1BC /* YKSmallLoopScrollView.m */; };
 		592C7D4B172BC71D00F851CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 592C7D4A172BC71D00F851CE /* UIKit.framework */; };
 		592C7D4D172BC71D00F851CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 592C7D4C172BC71D00F851CE /* Foundation.framework */; };
 		592C7D4F172BC71D00F851CE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 592C7D4E172BC71D00F851CE /* CoreGraphics.framework */; };
@@ -37,8 +37,8 @@
 		590BE020172BC96700EAB1BC /* 2013_3_19_10_30_13_3629.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2013_3_19_10_30_13_3629.jpg; sourceTree = "<group>"; };
 		590BE021172BC96700EAB1BC /* 2013_3_25_10_48_58_8644.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2013_3_25_10_48_58_8644.jpg; sourceTree = "<group>"; };
 		590BE022172BC96700EAB1BC /* 2013_3_25_14_56_9_9816-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "2013_3_25_14_56_9_9816-1.jpg"; sourceTree = "<group>"; };
-		590BE068172BE01D00EAB1BC /* YKLoopScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLoopScrollView.h; sourceTree = "<group>"; };
-		590BE069172BE01D00EAB1BC /* YKLoopScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLoopScrollView.m; sourceTree = "<group>"; };
+		590BE068172BE01D00EAB1BC /* YKSmallLoopScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKSmallLoopScrollView.h; sourceTree = "<group>"; };
+		590BE069172BE01D00EAB1BC /* YKSmallLoopScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKSmallLoopScrollView.m; sourceTree = "<group>"; };
 		592C7D47172BC71D00F851CE /* lunboTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lunboTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		592C7D4A172BC71D00F851CE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		592C7D4C172BC71D00F851CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -103,8 +103,8 @@
 				590BE014172BC8C000EAB1BC /* YKCamelViewController.h */,
 				590BE015172BC8C000EAB1BC /* YKCamelViewController.m */,
 				590BE016172BC8C000EAB1BC /* YKCamelViewController.xib */,
-				590BE068172BE01D00EAB1BC /* YKLoopScrollView.h */,
-				590BE069172BE01D00EAB1BC /* YKLoopScrollView.m */,
+				590BE068172BE01D00EAB1BC /* YKSmallLoopScrollView.h */,
+				590BE069172BE01D00EAB1BC /* YKSmallLoopScrollView.m */,
 				590BE01D172BC96700EAB1BC /* 2012_5_11_17_41_39_7738.jpg */,
 				590BE01E172BC96700EAB1BC /* 2013_3_15_10_56_46_1983.jpg */,
 				590BE01F172BC96700EAB1BC /* 2013_3_15_18_5_19_3286.jpg */,
@@ -206,7 +206,7 @@
 				592C7D57172BC71D00F851CE /* main.m in Sources */,
 				592C7D5B172BC71D00F851CE /* YKCamelAppDelegate.m in Sources */,
 				590BE017172BC8C000EAB1BC /* YKCamelViewController.m in Sources */,
-				590BE06A172BE01D00EAB1BC /* YKLoopScrollView.m in Sources */,
+				590BE06A172BE01D00EAB1BC /* YKSmallLoopScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

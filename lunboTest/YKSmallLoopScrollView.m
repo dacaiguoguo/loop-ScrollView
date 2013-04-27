@@ -6,11 +6,11 @@
 //  Copyright (c) 2011年 __MyCompanyName__. All rights reserved.
 //
 
-#import "YKLoopScrollView.h"
+#import "YKSmallLoopScrollView.h"
 
-static const int maxRange=1000;    //
+static const int maxRange_smallLoopScrollView =1000;    //
 
-@interface YKLoopScrollView()
+@interface YKSmallLoopScrollView()
 /*
  设置绝对pageindex [0-2000]; [1000]==0
  */
@@ -20,7 +20,7 @@ static const int maxRange=1000;    //
 @end
 
 
-@implementation YKLoopScrollView
+@implementation YKSmallLoopScrollView
 @synthesize delegate;
 
 
@@ -30,7 +30,7 @@ static const int maxRange=1000;    //
  */
 -(UIView*) viewAtIndex:(int) arrayindex{
     UIView* ret=nil;
-        id<YKLoopScrollViewDelegate> adelegate=(id<YKLoopScrollViewDelegate>) self.delegate;
+        id<YKSmallLoopScrollViewDelegate> adelegate=(id<YKSmallLoopScrollViewDelegate>) self.delegate;
         ret=[adelegate scrollView:self viewAtPageIndex:arrayindex];  //需要处理超大负值
     assert(ret!=nil);
     return ret;
@@ -39,18 +39,20 @@ static const int maxRange=1000;    //
 -(void) layoutPage:(int) centerIndex{
     sizeOfPage=self.frame.size;
     sizeOfPage.width = [self.delegate widthForScrollView:self];
+    int cha = self.frame.size.width-sizeOfPage.width;
+    cha/=2;
     if(numOfPage>0){
         const int range=2;
         NSMutableDictionary* newdic=[[NSMutableDictionary alloc] init]; //生成新的view
         for(int i=centerIndex-range;i<centerIndex+range;++i){     //    
-            int atArrayIndex=((i-maxRange)%numOfPage+numOfPage)%numOfPage;
+            int atArrayIndex=((i-maxRange_smallLoopScrollView)%numOfPage+numOfPage)%numOfPage;
             NSNumber* key=[NSNumber numberWithInt:atArrayIndex];
             UIView* v=[addSubViewDictionary objectForKey:key];
             if(v==nil || [[newdic allKeys] containsObject:key]){
                 v=[self viewAtIndex:atArrayIndex];
             }
             assert(v!=nil);
-            CGRect frame=CGRectMake(i*sizeOfPage.width+30, 0, sizeOfPage.width, sizeOfPage.height);
+            CGRect frame=CGRectMake(i*sizeOfPage.width+cha, 0, sizeOfPage.width, sizeOfPage.height);
             v.frame=frame;
             [contentScrollView addSubview:v];
             //NSLog(@"v=%@, contentScrollView=%@",v,contentScrollView);
@@ -74,13 +76,13 @@ static const int maxRange=1000;    //
     if(index==m_absolutePageIndex || numOfPage<1){
         return;
     }
-    if(index+1>=2*maxRange || index-1<=0){
-        index=maxRange+((index-maxRange)%numOfPage+numOfPage)%numOfPage;  
+    if(index+1>=2*maxRange_smallLoopScrollView || index-1<=0){
+        index=maxRange_smallLoopScrollView+((index-maxRange_smallLoopScrollView)%numOfPage+numOfPage)%numOfPage;  
         set=YES;
     }
     [self layoutPage:index];
     m_absolutePageIndex=index;
-    contentScrollView.contentSize=CGSizeMake(sizeOfPage.width*maxRange*2, sizeOfPage.height);    
+    contentScrollView.contentSize=CGSizeMake(sizeOfPage.width*maxRange_smallLoopScrollView*2, sizeOfPage.height);    
     if(set){
         float x=index*sizeOfPage.width;
         [contentScrollView setContentOffset:CGPointMake(x, 0) animated:anim];
@@ -106,11 +108,11 @@ static const int maxRange=1000;    //
 
 -(void)setPageIndex:(int)index animated:(BOOL) anim{
     assert(index>=0 && index<numOfPage );
-    int absindex= maxRange+index;
+    int absindex= maxRange_smallLoopScrollView+index;
     [self setAbsolutePageIndex:absindex animated:anim];
 }
 -(int) pageIndex{
-    return ((m_absolutePageIndex-maxRange)%numOfPage+numOfPage)%numOfPage;
+    return ((m_absolutePageIndex-maxRange_smallLoopScrollView)%numOfPage+numOfPage)%numOfPage;
 }
 
 -(void)nextPage:(BOOL)anim{
@@ -119,7 +121,7 @@ static const int maxRange=1000;    //
 }
 
 -(void) reloadData{
-    id<YKLoopScrollViewDelegate> adelegate=(id<YKLoopScrollViewDelegate>) self.delegate;
+    id<YKSmallLoopScrollViewDelegate> adelegate=(id<YKSmallLoopScrollViewDelegate>) self.delegate;
     int num=[adelegate numOfPageForScrollView:self];
     assert(num>=0);
     numOfPage=num;
@@ -130,14 +132,14 @@ static const int maxRange=1000;    //
     }
     [addSubViewDictionary removeAllObjects];
     if(num>0){
-        [self setAbsolutePageIndex:maxRange];
+        [self setAbsolutePageIndex:maxRange_smallLoopScrollView];
     }
 
 }
 
 -(void) internalInit{
     addSubViewDictionary=[[NSMutableDictionary alloc] init];
-    contentScrollView=[[YKLoopScrollViewInternal alloc] initWithFrame:self.bounds];
+    contentScrollView=[[YKSmallLoopScrollViewInternal alloc] initWithFrame:self.bounds];
     contentScrollView.delegate=self;
     contentScrollView.scrollsToTop = NO;
     contentScrollView.pagingEnabled=NO;
@@ -250,7 +252,7 @@ static const int maxRange=1000;    //
         return;
     }
     int currentindex=round(contentOffset.x/sizeOfPage.width);
-    if(currentindex+1>=2*maxRange || currentindex-1<=0){
+    if(currentindex+1>=2*maxRange_smallLoopScrollView || currentindex-1<=0){
         skipSetContentOffset=YES;
         [self setAbsolutePageIndex:currentindex animated:NO setContentOffset:YES];
     }else{
@@ -263,7 +265,7 @@ static const int maxRange=1000;    //
 @end
 
 
-@implementation YKLoopScrollViewInternal
+@implementation YKSmallLoopScrollViewInternal
 
 -(void)setContentOffset:(CGPoint)contentOffset{
     [super setContentOffset:contentOffset];

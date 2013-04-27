@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol YKLoopScrollViewDelegate;
+@protocol YKSmallLoopScrollViewDelegate;
 
 /*
  横向循环滚动的图片 paging scrollview ,需要在delegate 中 实现，，主要作用是嵌入在scrollview 中比YKSlideView 更自然
@@ -17,7 +17,7 @@
  @remark:
     构建一个超大contentsize 的scrollview,把需要的子view 铺在可视范围周边
  */
-@interface YKLoopScrollView : UIView<UIScrollViewDelegate>{
+@interface YKSmallLoopScrollView : UIView<UIScrollViewDelegate>{
 @private
     UIScrollView* contentScrollView;
     NSMutableDictionary* addSubViewDictionary;        //本类自动添加的子试图,key为pageindex (NSNumber) value 为view
@@ -29,7 +29,7 @@
     NSDate *endDate;
     BOOL skipSetContentOffset;  //跳过处理setcontentOffset 事件
 }
-@property(nonatomic,assign) IBOutlet id<YKLoopScrollViewDelegate> delegate;
+@property(nonatomic,assign) IBOutlet id<YKSmallLoopScrollViewDelegate> delegate;
 
 /*
  重新加载
@@ -48,23 +48,23 @@
 
 
 
-@protocol YKLoopScrollViewDelegate <NSObject>
+@protocol YKSmallLoopScrollViewDelegate <NSObject>
 
 /*
  总共有多少页
  */
--(int) numOfPageForScrollView:(YKLoopScrollView*) ascrollView;
+-(int) numOfPageForScrollView:(YKSmallLoopScrollView*) ascrollView;
 
 /*
  总共有多少页
  */
--(int) widthForScrollView:(YKLoopScrollView*) ascrollView;
+-(int) widthForScrollView:(YKSmallLoopScrollView*) ascrollView;
 
 /*
  第apageIndex 页的图片网址,  view会被设置为新的frame
  @param viewAtPageIndex:[0- viewAtPageIndex];
  */
--(UIView*) scrollView:(YKLoopScrollView*) ascrollView viewAtPageIndex:(int) apageIndex;
+-(UIView*) scrollView:(YKSmallLoopScrollView*) ascrollView viewAtPageIndex:(int) apageIndex;
            
 
 @optional
@@ -72,15 +72,15 @@
  选中第几页
  @param didSelectedPageIndex 选中的第几项，[0-numOfPageForScrollView];
  */
--(void) scrollView:(YKLoopScrollView*) ascrollView didSelectedPageIndex:(int) apageIndex;
+-(void) scrollView:(YKSmallLoopScrollView*) ascrollView didSelectedPageIndex:(int) apageIndex;
 
 /*
  开始滚动
  */
--(void) scrollViewWillBeginDecelerating:(YKLoopScrollView*) ascrollView;
+-(void) scrollViewWillBeginDecelerating:(YKSmallLoopScrollView*) ascrollView;
 
 //结束滚动
--(void) scrollViewDidEndDecelerating:(YKLoopScrollView*) ascrollView;
+-(void) scrollViewDidEndDecelerating:(YKSmallLoopScrollView*) ascrollView;
 
 
 @end
@@ -93,7 +93,7 @@
 -(void) onSetContentOffset:(CGPoint)contentOffset;
 
 @end
-@interface YKLoopScrollViewInternal : UIScrollView {
+@interface YKSmallLoopScrollViewInternal : UIScrollView {
 @private
     
 }

@@ -7,9 +7,9 @@
 //
 
 #import "YKCamelViewController.h"
-#import "YKLoopScrollView.h"
+#import "YKSmallLoopScrollView.h"
 
-@interface YKCamelViewController ()<YKLoopScrollViewDelegate>
+@interface YKCamelViewController ()<YKSmallLoopScrollViewDelegate>
 @property (strong, nonatomic) NSMutableArray *filenames;
 @end
 
@@ -19,20 +19,20 @@
  总共有多少页
  */
 @synthesize loopScrollView = _loopScrollView;
--(int) numOfPageForScrollView:(YKLoopScrollView*) ascrollView{
+-(int) numOfPageForScrollView:(YKSmallLoopScrollView*) ascrollView{
     return self.filenames.count;
 }
--(int) widthForScrollView:(YKLoopScrollView*) ascrollView{
-    return 260;
+-(int) widthForScrollView:(YKSmallLoopScrollView*) ascrollView{
+    return 200;
 }
 /*
  第apageIndex 页的图片网址,  view会被设置为新的frame
  @param viewAtPageIndex:[0- viewAtPageIndex];
  */
--(UIView*) scrollView:(YKLoopScrollView*) ascrollView viewAtPageIndex:(int) apageIndex{
+-(UIView*) scrollView:(YKSmallLoopScrollView*) ascrollView viewAtPageIndex:(int) apageIndex{
     UIImageView *ret = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[self.filenames objectAtIndex:apageIndex]]];
     ret.contentMode = UIViewContentModeScaleToFill;
-    [ret setFrame:CGRectMake(0, 0, 260, 157)];
+    [ret setFrame:CGRectMake(0, 0, 200, 157)];
     return ret;
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
