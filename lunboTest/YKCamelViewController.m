@@ -7,23 +7,72 @@
 //
 
 #import "YKCamelViewController.h"
+#import "YKLoopScrollView.h"
 
-@interface YKCamelViewController ()
-
+@interface YKCamelViewController ()<YKLoopScrollViewDelegate>
+@property (strong, nonatomic) NSMutableArray *filenames;
 @end
 
 @implementation YKCamelViewController
 
+/*
+ 总共有多少页
+ */
+@synthesize loopScrollView = _loopScrollView;
+-(int) numOfPageForScrollView:(YKLoopScrollView*) ascrollView{
+    return self.filenames.count;
+}
+
+/*
+ 第apageIndex 页的图片网址,  view会被设置为新的frame
+ @param viewAtPageIndex:[0- viewAtPageIndex];
+ */
+-(UIView*) scrollView:(YKLoopScrollView*) ascrollView viewAtPageIndex:(int) apageIndex{
+    UIImageView *ret = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[self.filenames objectAtIndex:apageIndex]]];
+    ret.contentMode = UIViewContentModeScaleToFill;
+    [ret setFrame:CGRectMake(0, 0, 260, 157)];
+    return ret;
+}
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.filenames= [NSMutableArray array];
+        // Custom initialization
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    NSMutableArray *paths = [[[NSBundle mainBundle]
+                              pathsForResourcesOfType:@"jpg" inDirectory:nil] mutableCopy];
+    
+    // loop through each png file
+    for (NSString *filename in paths)
+    {
+        // separate the file name from the rest of the path
+       NSString * filenameto = [filename lastPathComponent];
+        [self.filenames addObject:filenameto]; // add the display name
+    }
+//    self.loopScrollView.bounds = CGRectMake(0, 0, 320, 157);
+    [self.loopScrollView reloadData];
+    //
+    // Do any additional setup after loading the view from its nib.
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewDidUnload
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self setLoopScrollView:nil];
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 @end

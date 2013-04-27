@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class YKLoopScrollView;
 @interface YKCamelViewController : UIViewController
+@property (strong, nonatomic) IBOutlet YKLoopScrollView *loopScrollView;
 
 @end

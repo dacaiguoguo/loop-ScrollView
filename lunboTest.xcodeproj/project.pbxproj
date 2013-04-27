@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		590BE017172BC8C000EAB1BC /* YKCamelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 590BE015172BC8C000EAB1BC /* YKCamelViewController.m */; };
+		590BE018172BC8C000EAB1BC /* YKCamelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 590BE016172BC8C000EAB1BC /* YKCamelViewController.xib */; };
+		590BE023172BC96700EAB1BC /* 2012_5_11_17_41_39_7738.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 590BE01D172BC96700EAB1BC /* 2012_5_11_17_41_39_7738.jpg */; };
+		590BE024172BC96700EAB1BC /* 2013_3_15_10_56_46_1983.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 590BE01E172BC96700EAB1BC /* 2013_3_15_10_56_46_1983.jpg */; };
+		590BE025172BC96700EAB1BC /* 2013_3_15_18_5_19_3286.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 590BE01F172BC96700EAB1BC /* 2013_3_15_18_5_19_3286.jpg */; };
+		590BE026172BC96700EAB1BC /* 2013_3_19_10_30_13_3629.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 590BE020172BC96700EAB1BC /* 2013_3_19_10_30_13_3629.jpg */; };
+		590BE027172BC96700EAB1BC /* 2013_3_25_10_48_58_8644.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 590BE021172BC96700EAB1BC /* 2013_3_25_10_48_58_8644.jpg */; };
+		590BE028172BC96700EAB1BC /* 2013_3_25_14_56_9_9816-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 590BE022172BC96700EAB1BC /* 2013_3_25_14_56_9_9816-1.jpg */; };
+		590BE06A172BE01D00EAB1BC /* YKLoopScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 590BE069172BE01D00EAB1BC /* YKLoopScrollView.m */; };
 		592C7D4B172BC71D00F851CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 592C7D4A172BC71D00F851CE /* UIKit.framework */; };
 		592C7D4D172BC71D00F851CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 592C7D4C172BC71D00F851CE /* Foundation.framework */; };
 		592C7D4F172BC71D00F851CE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 592C7D4E172BC71D00F851CE /* CoreGraphics.framework */; };
@@ -16,11 +25,20 @@
 		592C7D5D172BC71D00F851CE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 592C7D5C172BC71D00F851CE /* Default.png */; };
 		592C7D5F172BC71D00F851CE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 592C7D5E172BC71D00F851CE /* Default@2x.png */; };
 		592C7D61172BC71D00F851CE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 592C7D60172BC71D00F851CE /* Default-568h@2x.png */; };
-		592C7D64172BC71D00F851CE /* YKCamelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592C7D63172BC71D00F851CE /* YKCamelViewController.m */; };
-		592C7D67172BC71D00F851CE /* YKCamelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 592C7D65172BC71D00F851CE /* YKCamelViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		590BE014172BC8C000EAB1BC /* YKCamelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKCamelViewController.h; sourceTree = "<group>"; };
+		590BE015172BC8C000EAB1BC /* YKCamelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKCamelViewController.m; sourceTree = "<group>"; };
+		590BE016172BC8C000EAB1BC /* YKCamelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKCamelViewController.xib; sourceTree = "<group>"; };
+		590BE01D172BC96700EAB1BC /* 2012_5_11_17_41_39_7738.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2012_5_11_17_41_39_7738.jpg; sourceTree = "<group>"; };
+		590BE01E172BC96700EAB1BC /* 2013_3_15_10_56_46_1983.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2013_3_15_10_56_46_1983.jpg; sourceTree = "<group>"; };
+		590BE01F172BC96700EAB1BC /* 2013_3_15_18_5_19_3286.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2013_3_15_18_5_19_3286.jpg; sourceTree = "<group>"; };
+		590BE020172BC96700EAB1BC /* 2013_3_19_10_30_13_3629.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2013_3_19_10_30_13_3629.jpg; sourceTree = "<group>"; };
+		590BE021172BC96700EAB1BC /* 2013_3_25_10_48_58_8644.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2013_3_25_10_48_58_8644.jpg; sourceTree = "<group>"; };
+		590BE022172BC96700EAB1BC /* 2013_3_25_14_56_9_9816-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "2013_3_25_14_56_9_9816-1.jpg"; sourceTree = "<group>"; };
+		590BE068172BE01D00EAB1BC /* YKLoopScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLoopScrollView.h; sourceTree = "<group>"; };
+		590BE069172BE01D00EAB1BC /* YKLoopScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLoopScrollView.m; sourceTree = "<group>"; };
 		592C7D47172BC71D00F851CE /* lunboTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lunboTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		592C7D4A172BC71D00F851CE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		592C7D4C172BC71D00F851CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -34,9 +52,6 @@
 		592C7D5C172BC71D00F851CE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		592C7D5E172BC71D00F851CE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		592C7D60172BC71D00F851CE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		592C7D62172BC71D00F851CE /* YKCamelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKCamelViewController.h; sourceTree = "<group>"; };
-		592C7D63172BC71D00F851CE /* YKCamelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKCamelViewController.m; sourceTree = "<group>"; };
-		592C7D66172BC71D00F851CE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/YKCamelViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +100,17 @@
 			children = (
 				592C7D59172BC71D00F851CE /* YKCamelAppDelegate.h */,
 				592C7D5A172BC71D00F851CE /* YKCamelAppDelegate.m */,
-				592C7D62172BC71D00F851CE /* YKCamelViewController.h */,
-				592C7D63172BC71D00F851CE /* YKCamelViewController.m */,
-				592C7D65172BC71D00F851CE /* YKCamelViewController.xib */,
+				590BE014172BC8C000EAB1BC /* YKCamelViewController.h */,
+				590BE015172BC8C000EAB1BC /* YKCamelViewController.m */,
+				590BE016172BC8C000EAB1BC /* YKCamelViewController.xib */,
+				590BE068172BE01D00EAB1BC /* YKLoopScrollView.h */,
+				590BE069172BE01D00EAB1BC /* YKLoopScrollView.m */,
+				590BE01D172BC96700EAB1BC /* 2012_5_11_17_41_39_7738.jpg */,
+				590BE01E172BC96700EAB1BC /* 2013_3_15_10_56_46_1983.jpg */,
+				590BE01F172BC96700EAB1BC /* 2013_3_15_18_5_19_3286.jpg */,
+				590BE020172BC96700EAB1BC /* 2013_3_19_10_30_13_3629.jpg */,
+				590BE021172BC96700EAB1BC /* 2013_3_25_10_48_58_8644.jpg */,
+				590BE022172BC96700EAB1BC /* 2013_3_25_14_56_9_9816-1.jpg */,
 				592C7D51172BC71D00F851CE /* Supporting Files */,
 			);
 			path = lunboTest;
@@ -163,7 +186,13 @@
 				592C7D5D172BC71D00F851CE /* Default.png in Resources */,
 				592C7D5F172BC71D00F851CE /* Default@2x.png in Resources */,
 				592C7D61172BC71D00F851CE /* Default-568h@2x.png in Resources */,
-				592C7D67172BC71D00F851CE /* YKCamelViewController.xib in Resources */,
+				590BE018172BC8C000EAB1BC /* YKCamelViewController.xib in Resources */,
+				590BE023172BC96700EAB1BC /* 2012_5_11_17_41_39_7738.jpg in Resources */,
+				590BE024172BC96700EAB1BC /* 2013_3_15_10_56_46_1983.jpg in Resources */,
+				590BE025172BC96700EAB1BC /* 2013_3_15_18_5_19_3286.jpg in Resources */,
+				590BE026172BC96700EAB1BC /* 2013_3_19_10_30_13_3629.jpg in Resources */,
+				590BE027172BC96700EAB1BC /* 2013_3_25_10_48_58_8644.jpg in Resources */,
+				590BE028172BC96700EAB1BC /* 2013_3_25_14_56_9_9816-1.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +205,8 @@
 			files = (
 				592C7D57172BC71D00F851CE /* main.m in Sources */,
 				592C7D5B172BC71D00F851CE /* YKCamelAppDelegate.m in Sources */,
-				592C7D64172BC71D00F851CE /* YKCamelViewController.m in Sources */,
+				590BE017172BC8C000EAB1BC /* YKCamelViewController.m in Sources */,
+				590BE06A172BE01D00EAB1BC /* YKLoopScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,14 +221,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		592C7D65172BC71D00F851CE /* YKCamelViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				592C7D66172BC71D00F851CE /* en */,
-			);
-			name = YKCamelViewController.xib;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -206,6 +228,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = armv6;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -227,7 +250,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -237,6 +260,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = armv6;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -251,7 +275,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -264,6 +288,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "lunboTest/lunboTest-Prefix.pch";
 				INFOPLIST_FILE = "lunboTest/lunboTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -275,6 +300,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "lunboTest/lunboTest-Prefix.pch";
 				INFOPLIST_FILE = "lunboTest/lunboTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -299,6 +325,7 @@
 				592C7D6C172BC71D00F851CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
