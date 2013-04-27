@@ -191,7 +191,7 @@ static const int maxRange_smallLoopScrollView =1000;    //
         }
     }else{
         
-        if (abs(cha)<160) {
+        if (abs(cha)<sizeOfPage.width/2) {
             pOff.x = ((int)(oldOffsetX/sizeOfPage.width))*sizeOfPage.width;
         }else{
             if (cha<0) {
@@ -218,7 +218,7 @@ static const int maxRange_smallLoopScrollView =1000;    //
         
         float currentX = pOff.x;
         float cha = currentX-oldOffsetX;
-        if (abs(cha)<160) {
+        if (abs(cha)<sizeOfPage.width/2) {
             pOff.x = ((int)(oldOffsetX/sizeOfPage.width))*sizeOfPage.width;
         }else{
             if (cha<0) {
