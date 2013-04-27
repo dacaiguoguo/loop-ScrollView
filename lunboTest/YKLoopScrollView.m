@@ -10,7 +10,7 @@
 
 static const int maxRange=1000;    //
 
-
+#define widthScroll  260
 @interface YKLoopScrollView()
 /*
  设置绝对pageindex [0-2000]; [1000]==0
@@ -39,7 +39,7 @@ static const int maxRange=1000;    //
 }
 -(void) layoutPage:(int) centerIndex{
     sizeOfPage=self.frame.size;
-//    sizeOfPage.width = 260;
+    sizeOfPage.width = 260;
     if(numOfPage>0){
         const int range=2;
         NSMutableDictionary* newdic=[[NSMutableDictionary alloc] init]; //生成新的view
@@ -51,7 +51,7 @@ static const int maxRange=1000;    //
                 v=[self viewAtIndex:atArrayIndex];
             }
             assert(v!=nil);
-            CGRect frame=CGRectMake(i*sizeOfPage.width, 0, sizeOfPage.width, sizeOfPage.height);
+            CGRect frame=CGRectMake(i*sizeOfPage.width+30, 0, sizeOfPage.width, sizeOfPage.height);
             v.frame=frame;
             [contentScrollView addSubview:v];
             //NSLog(@"v=%@, contentScrollView=%@",v,contentScrollView);
@@ -180,26 +180,28 @@ static const int maxRange=1000;    //
     
     float currentX = pOff.x;
     float cha = currentX-oldOffsetX;
-    if (abs(cha)<160) {
-        pOff.x = ((int)(oldOffsetX/320))*320;
-    }else{
-        if (cha<0) {
-            pOff.x = ((int)(oldOffsetX/320)-1)*320;
-        }else{
-            pOff.x = ((int)(oldOffsetX/320)+1)*320;
-        }
-        
-    }
-    
     endDate = [NSDate date];
     NSTimeInterval inter = [endDate timeIntervalSinceDate:startDate];
     if (inter<0.2) {
         if (cha<0) {
-            pOff.x = ((int)(oldOffsetX/320)-1)*320;
+            pOff.x = ((int)(oldOffsetX/widthScroll)-1)*widthScroll;
         }else{
-            pOff.x = ((int)(oldOffsetX/320)+1)*320; 
+            pOff.x = ((int)(oldOffsetX/widthScroll)+1)*widthScroll;
+        }
+    }else{
+        
+        if (abs(cha)<160) {
+            pOff.x = ((int)(oldOffsetX/widthScroll))*widthScroll;
+        }else{
+            if (cha<0) {
+                pOff.x = ((int)(oldOffsetX/widthScroll)-1)*widthScroll;
+            }else{
+                pOff.x = ((int)(oldOffsetX/widthScroll)+1)*widthScroll;
+            }
+            
         }
     }
+    
     [scrollView setContentOffset:pOff animated:YES];
     if([delegate respondsToSelector:@selector(scrollViewWillBeginDecelerating:)]){
         [delegate scrollViewWillBeginDecelerating:self];
@@ -216,33 +218,25 @@ static const int maxRange=1000;    //
         float currentX = pOff.x;
         float cha = currentX-oldOffsetX;
         if (abs(cha)<160) {
-            pOff.x = ((int)(oldOffsetX/320))*320;
+            pOff.x = ((int)(oldOffsetX/widthScroll))*widthScroll;
         }else{
             if (cha<0) {
-                pOff.x = ((int)(oldOffsetX/320)-1)*320;
+                pOff.x = ((int)(oldOffsetX/widthScroll)-1)*widthScroll;
             }else{
-                pOff.x = ((int)(oldOffsetX/320)+1)*320;
+                pOff.x = ((int)(oldOffsetX/widthScroll)+1)*widthScroll;
             }
             
         }
-        endDate = [NSDate date];
-        NSTimeInterval inter = [endDate timeIntervalSinceDate:startDate];
-        if (inter<0.2) {
-            if (cha<0) {
-                pOff.x = ((int)(oldOffsetX/320)-1)*320;
-            }else{
-                pOff.x = ((int)(oldOffsetX/320)+1)*320;
-            }
-        }
-#warning 这里要记下时间，如果时间短，刚滚了
 
         [scrollView setContentOffset:pOff animated:YES];
     }
 
 }
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
+    oldOffsetX = scrollView.contentOffset.x;
 
+}
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-
     
     //在当前位置左右都铺上subview
     if([delegate respondsToSelector:@selector(scrollViewDidEndDecelerating:)]){
