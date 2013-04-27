@@ -24,7 +24,9 @@
     int numOfPage;                          //总共有多少页
     CGSize sizeOfPage;                  
     int m_absolutePageIndex;        //当前第几页
-    
+    float oldOffsetX;
+    NSDate *startDate;
+    NSDate *endDate;
     BOOL skipSetContentOffset;  //跳过处理setcontentOffset 事件
 }
 @property(nonatomic,assign) IBOutlet id<YKLoopScrollViewDelegate> delegate;

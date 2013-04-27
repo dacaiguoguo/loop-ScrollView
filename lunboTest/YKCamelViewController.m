@@ -30,7 +30,7 @@
 -(UIView*) scrollView:(YKLoopScrollView*) ascrollView viewAtPageIndex:(int) apageIndex{
     UIImageView *ret = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[self.filenames objectAtIndex:apageIndex]]];
     ret.contentMode = UIViewContentModeScaleToFill;
-    [ret setFrame:CGRectMake(0, 0, 260, 157)];
+    [ret setFrame:CGRectMake(0, 0, 320, 157)];
     return ret;
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
