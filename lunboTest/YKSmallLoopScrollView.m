@@ -178,7 +178,8 @@ static const int maxRange_smallLoopScrollView =1000;    //
 }
 -(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
     CGPoint pOff =  scrollView.contentOffset;
-    
+    scrollView.userInteractionEnabled = NO;
+
     float currentX = pOff.x;
     float cha = currentX-oldOffsetX;
     endDate = [NSDate date];
@@ -214,6 +215,7 @@ static const int maxRange_smallLoopScrollView =1000;    //
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     if (!decelerate) {
+        scrollView.userInteractionEnabled = NO;
         CGPoint pOff =  scrollView.contentOffset;
         
         float currentX = pOff.x;
@@ -234,7 +236,7 @@ static const int maxRange_smallLoopScrollView =1000;    //
 
 }
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
-    oldOffsetX = scrollView.contentOffset.x;
+    scrollView.userInteractionEnabled = YES;
 
 }
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{

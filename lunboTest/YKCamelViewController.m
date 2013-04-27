@@ -23,7 +23,7 @@
     return self.filenames.count;
 }
 -(int) widthForScrollView:(YKSmallLoopScrollView*) ascrollView{
-    return 200;
+    return 260;
 }
 /*
  第apageIndex 页的图片网址,  view会被设置为新的frame
@@ -32,7 +32,7 @@
 -(UIView*) scrollView:(YKSmallLoopScrollView*) ascrollView viewAtPageIndex:(int) apageIndex{
     UIImageView *ret = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[self.filenames objectAtIndex:apageIndex]]];
     ret.contentMode = UIViewContentModeScaleToFill;
-    [ret setFrame:CGRectMake(0, 0, 200, 157)];
+    [ret setFrame:CGRectMake(0, 0, 260, 157)];
     return ret;
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
