@@ -173,12 +173,13 @@ static const int maxRange_smallLoopScrollView =1000;    //
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+
     oldOffsetX = scrollView.contentOffset.x;
     startDate = [NSDate date];
 }
 -(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
+
     CGPoint pOff =  scrollView.contentOffset;
-    scrollView.userInteractionEnabled = NO;
 
     float currentX = pOff.x;
     float cha = currentX-oldOffsetX;
@@ -203,7 +204,6 @@ static const int maxRange_smallLoopScrollView =1000;    //
             
         }
     }
-    
     [scrollView setContentOffset:pOff animated:YES];
     if([delegate respondsToSelector:@selector(scrollViewWillBeginDecelerating:)]){
         [delegate scrollViewWillBeginDecelerating:self];
@@ -215,7 +215,6 @@ static const int maxRange_smallLoopScrollView =1000;    //
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     if (!decelerate) {
-        scrollView.userInteractionEnabled = NO;
         CGPoint pOff =  scrollView.contentOffset;
         
         float currentX = pOff.x;
@@ -230,17 +229,14 @@ static const int maxRange_smallLoopScrollView =1000;    //
             }
             
         }
-
         [scrollView setContentOffset:pOff animated:YES];
     }
 
 }
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
-    scrollView.userInteractionEnabled = YES;
-
 }
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    
+
     //在当前位置左右都铺上subview
     if([delegate respondsToSelector:@selector(scrollViewDidEndDecelerating:)]){
         [delegate scrollViewDidEndDecelerating:self];
